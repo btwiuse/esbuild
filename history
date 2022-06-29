@@ -1,0 +1,3 @@
+sed -i -e 's,"name": "esbuild,"name": "@btwiuse/esbuild,g' npm/esbuild*/package.json
+sed -i -e 's,"esbuild-,"@btwiuse/esbuild-,g' npm/esbuild/package.json 
+sed -i -e 's,npm publish --,npm publish --access=public --,g' Makefile 
