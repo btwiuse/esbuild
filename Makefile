@@ -414,7 +414,6 @@ publish-all: check-go-version
 	@echo Enter one-time password:
 	@read OTP && OTP="$$OTP" $(MAKE) --no-print-directory -j4 \
 		publish-neutral \
-		publish-deno \
 		publish-wasm
 
 	git push origin master "v$(ESBUILD_VERSION)"
