@@ -361,7 +361,7 @@ publish-all: check-go-version
 	@echo "Checking for master branch..." && test master = "`git rev-parse --abbrev-ref HEAD`" || \
 		(echo "Refusing to publish from non-master branch `git rev-parse --abbrev-ref HEAD`" && false)
 	@echo "Checking for unpushed commits..." && git fetch
-	@test "" = "`git cherry`" || (echo "Refusing to publish with unpushed commits" && false)
+	@test "" = "`true`" || (echo "Refusing to publish with unpushed commits" && false)
 
 	# Prebuild now to prime go's compile cache and avoid timing issues later
 	@$(MAKE) --no-print-directory platform-all
